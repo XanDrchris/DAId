@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Copyright (C)2023-present Xander Christopher(https://github.com/XandrChris) -->
+    <!-- All Rights Reserved. -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ssd Mobilenet | Smartcam Demo</title>
+    <link preload rel="stylesheet" href="Styles/Fonts/fonts.css" />
+    <link preload rel="stylesheet" href="Styles/index.min.css" />
+    <script src="Tf.js/tf.min.js"></script>
+    <script src="Models/cocoSSd/cocov3.min.js"></script>
+    <script src="Others/gsap.min.js"></script>
+  </head>
+  <body>
+    <div class="mainHead">Object Detection Demo</div>
+    <div>
+      <div class="heading2">Select Model</div>
+      <div class="modelGridPri">
+        <div class="modelGrid">
+          <div class="modelGridSec" model="v1">
+            <input type="radio" name="Model" id="" />
+            <div>mobilenet_v1</div>
+          </div>
+          <div class="modelGridSec" model="v2">
+            <input type="radio" name="Model" id="" />
+            <div>mobilenet_v2 (Highest Classification Accuracy)</div>
+          </div>
+          <div class="modelGridSec" model="v2/lite">
+            <input type="radio" name="Model" id="" />
+            <div>lite_mobilenet_v2 (Smallest and Fastest)</div>
+          </div>
+        </div>
+        <button type="button" class="buttonSe" disabled id="loadModel">
+          Load Model
+        </button>
+      </div>
+    </div>
+    <div class="heading2">Detect Objects in an Image</div>
+    <div style="margin: 10px;">
+      <div class="heading3" style="margin-bottom: 20px;">Sample Images</div>
+      <div style="margin-top: 30px;display: flex;flex-wrap: wrap;justify-content: center;gap: 10px;">
+        <div class="center">
+          <img
+            src="Images/detect1.jpg"
+            alt="Sample 1"
+            class="imageCont"
+            enable="yes"
+          />
+        </div>
+        <div class="center">
+          <img
+            src="Images/detect2.jpg"
+            alt="Sample 2"
+            class="imageCont"
+            enable="yes"
+          />
+        </div>
+        <div class="center">
+          <img
+            src="Images/detect3.jpg"
+            alt="Sample 3"
+            class="imageCont"
+            enable="yes"
+          />
+        </div>
+        <div class="center">
+          <img
+            src="Images/detect4.jpg"
+            alt="Sample 4"
+            class="imageCont"
+            enable="yes"
+          />
+        </div>
+        <div class="center">
+          <img
+            src="Images/detect5.jpg"
+            alt="Sample 5"
+            class="imageCont"
+            enable="yes"
+          />
+        </div>
+        <div class="center">
+          <img
+            src="Images/detect6.jpg"
+            alt="Sample 6"
+            class="imageCont"
+            enable="yes"
+          />
+        </div>
+        <div class="center">
+          <img
+            src="Images/detect7.jpeg"
+            alt="Sample &"
+            class="imageCont"
+            enable="yes"
+          />
+        </div>
+      </div>
+      <div class="heading3">Select Image from your Device</div>
+      <button
+        type="button"
+        class="buttonSe"
+        style="margin: 20px;"
+        id="openImageBtn"
+      >
+        Select Image
+      </button>
+      <div class="center" style="margin-top: 30px;">
+        <img src="" alt="" id="sampleImage" />
+      </div>
+      <div class="heading3">Use your Webcam</div>
+      <button type="button" class="buttonSe" style="margin: 20px;" id="webcamBtn">
+        Enable Webcam
+      </button>
+      <div id="webCamCont" class="center">
+        <video src="" id="webCamVideo" muted autoplay class="webCam hidden"></video>
+        <div id="webCamObjCont" class="webCam hidden" style="position: absolute;z-index: 1;"></div>
+      </div>
+    </div>
+    <div class="cover hidden" id="loaderDiv" style="z-index: 3;">
+      <img src="Images/Loader.svg" alt="Loader" width="40px" />
+    </div>
+    <div class="cover hidden" id="backOpac"></div>
+    <div style="font-size: 12px;text-align: end;">
+      <span>&#169 2023-present</span>
+      <a href="http://github.com/XandrChris" target="_blank" rel="noopener noreferrer">Xander Christopher</a>
+    </div>
+    <script src="mymobilenet_v2.min.js"></script>
+  </body>
+</html>
