@@ -512,7 +512,7 @@
      * limitations under the License.
      * =============================================================================
      */
-    var BASE_PATH = '../Models/cocoSSd/';
+    var BASE_PATH = '../ObjectDetection/Models/cocoSSd/';
     function load(config) {
         if (config === void 0) { config = {}; }
         return __awaiter(this, void 0, void 0, function () {
