@@ -8,11 +8,19 @@
     box-sizing: border-box;
 }
 
+body {
+    padding: 30px;
+}
+
+a {
+    text-decoration: none;
+}
+
 .hidden {
     display: none !important;
 }
 
-.center{
+.center {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -23,6 +31,7 @@
     font-size: 40px;
 }
 
-body{
-    padding: 30px;
+.copyDv{
+    font-size: 12px;
+    text-align: end;
 }
