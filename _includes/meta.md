@@ -2,4 +2,4 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 <link rel="stylesheet" href="assets/Fonts/fonts.css">
-<link rel="stylesheet" href="asstes/Styles/common.css">
+<link rel="stylesheet" href="assets/Styles/common.css">
