@@ -104,7 +104,30 @@
             } catch (error) {
                 console.error(error);
             }
-        })
+        });
+        async function getSaveHandle(name) {
+            const opts = {
+                suggestedName: name,
+                types: [
+                    {
+                        description: "Image",
+                        accept: {
+                            'Image/*': [".png"],
+                        },
+                    },
+                ],
+            };
+            let handle = await window.showSaveFilePicker(opts);
+            return handle;
+        };
+        function writeFile(handle, url) {
+            fetch(url).then(file=>{
+                URL.revokeObjectURL(url);
+                handle.createWritable().then(async (wt)=>{
+                    await file.body.pipeTo(wt);
+                });
+            });
+        };
         function predict(imag) {
             const finalTensor = tf.tidy(() => {
                 let img = tf.browser.fromPixels(imag);
@@ -149,14 +172,17 @@
                     genBtn.disabled = false;
                     dwnBtn.classList.remove("hidden");
                     dwnBtn.addEventListener("click", () => {
-                        canvas.toBlob((blob) => {
+                        canvas.toBlob(async (blob) => {
+                            let urle = URL.createObjectURL(blob);
                             let date = new Date();
-                            saveAs(blob, `AnimeGANv3-prediction-${date.getTime()}.png`);
-                        })
-                    })
-                }
-            })
-        }
-    }
+                            let name = `AnimeGANv3-prediction-${date.getTime()}.png`;
+                            let svHndl = await getSaveHandle(name);
+                            writeFile(svHndl, urle);
+                        });
+                    });
+                };
+            });
+        };
+    };
     init();
 })();
