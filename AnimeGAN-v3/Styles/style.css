@@ -1,0 +1,44 @@
+/* Copyright (C)2023-present Xander Christopher(https://github.com/XandrChris) -->
+All Rights Reserved. */
+
+.mnDv {
+    flex-direction: row;
+    gap: 10px;
+}
+
+.imgCont {
+    width: 400px;
+    height: 300px;
+    border: 1px solid #a9a9a9;
+    border-radius: 15px;
+    margin-top: 10px;
+    color: #a9a9a9;
+    text-align: center;
+}
+
+.btnCont {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.shwImg {
+    position: absolute;
+}
+
+.resCnt {
+    width: 512px;
+}
+
+@media screen and (max-width: 950px) {
+    .mnDv {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 462px) {
+    .imgCont {
+        width: 95%;
+        height: 250px;
+    }
+}
