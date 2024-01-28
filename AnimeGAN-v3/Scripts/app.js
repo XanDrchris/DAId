@@ -42,7 +42,7 @@
 
             });
             rp.then(() => {
-                tflite.loadTFLiteModel(`./models/AnimeGANv3_${model}.tflite`).then(mode => {
+                tflite.loadTFLiteModel(`./AnimeGAN-v3/models/AnimeGANv3_${model}.tflite`).then(mode => {
                     tfliteModel = mode;
                     dwnMes.innerHTML = "Model Loaded";
                     setTimeout(() => {
