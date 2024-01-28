@@ -1,0 +1,63 @@
+---
+permalink: '/AnimeGAN-v3'
+layout: none
+---
+
+<!DOCTYPE html>
+<!-- Copyright (C)2023-present Xander Christopher(https://github.com/XandrChris) -->
+<!-- All Rights Reserved. -->
+<html lang="en">
+
+<head>
+    {% include meta.md %}
+    <title>AnimeGANv3 Web Demo</title>
+    <link preload rel="stylesheet" href="AnimeGAN-v3/Styles/style.css"></link> 
+    <script src="Tf.js/tf.min.js"></script>
+    <script src="Tf.js/tf-tflite.min.js"></script>
+</head>
+
+<body>
+    <div class="center mainHead">
+        <p>AnimeGANv3 Web Demo</p>
+    </div>
+    <div class="heading2">Select Model</div>
+    <div class="modelGridPri">
+        <div class="modelGrid">
+            <div class="modelGridSec">
+                <input type="radio" name="Model" model="Hayao_36"/>
+                <div>AnimeGANv3 Hayao</div>
+            </div>
+            <div class="modelGridSec">
+                <input type="radio" name="Model" model="Shinkai_37"/>
+                <div>AnimeGANv3 Shinkai</div>
+            </div>
+        </div>
+        <button type="button" class="buttonSe loadModel" disabled id="loadModel">
+            Load Model
+        </button>
+        <p id="dwnMes" class="hidden">Downloading Model...</p>
+    </div>
+    </div>
+    <div class="heading2">Select Image</div>
+    <div class="center mnDv">
+        <div class="center">
+            <div class="center imgCont" id="imgCnt">
+                <p>Selected Image will appear here.</p>
+            </div>
+            <div class="btnCont">
+                <button class="buttonSe" type="button" id="openFile">Open Image</button>
+                <button class="buttonSe" type="button" id="genBtn" disabled>Convert Image</button>
+            </div>
+        </div>
+        <div class="center">
+            <div class="center imgCont resCnt" id="cnvCnt"></div>
+            <div class="btnCont" style="height: 40px;">
+                <button type="button" id="dwnBtn" class="buttonSe hidden">Download Image</button>
+            </div>
+        </div>
+    </div>
+    {% include copyrightDiv.md %}
+</body>
+<script src="AnimeGAN-v3/Scripts/app.js"></script>
+
+</html>

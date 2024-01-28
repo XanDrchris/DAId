@@ -1,61 +1,8 @@
 /* Copyright (C)2023-present Xander Christopher(https://github.com/XandrChris). */
 /* All rights reserved. */
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Ubuntu', sans-serif;
-}
-
-body {
-    padding: 30px;
-}
-
-.hidden {
-    display: none !important;
-}
-
-.mainHead {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 40px;
-}
-
-.heading2 {
-    font-size: 23px;
-    margin-top: 30px;
-}
-
 .heading3{
     margin-top: 30px;
-}
-
-.modelGridPri {
-    display: flex;
-    align-items: center;
-    gap: 55px;
-}
-
-.modelGrid {
-    display: flex;
-    width: fit-content;
-    margin: 10px;
-    flex-direction: column;
-}
-
-.modelGridSec {
-    display: flex;
-    padding: 10px;
-    gap: 10px;
-    cursor: pointer;
-}
-
-.buttonSe {
-    width: 120px;
-    height: 40px;
-    cursor: pointer;
 }
 
 .priImageCont {
@@ -94,13 +41,6 @@ body {
     left: 0;
     background-color: #ffffffa1;
     display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.center{
-    display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
