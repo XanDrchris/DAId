@@ -68,7 +68,7 @@
                             im.src = urlw;
                             im.onload = () => {
                                 let resol = im.width / im.height;
-                                if (resol < 1) {
+                                if (resol < 4/3) {
                                     let zoom = (imgCnt.clientHeight - 10) / im.height;
                                     im.style.zoom = zoom;
                                 } else {
@@ -110,9 +110,9 @@
                 suggestedName: name,
                 types: [
                     {
-                        description: "Image",
+                        description: 'Image',
                         accept: {
-                            'Image/*': [".png"],
+                            'Image/*': ['.png'],
                         },
                     },
                 ],
@@ -121,9 +121,9 @@
             return handle;
         };
         function writeFile(handle, url) {
-            fetch(url).then(file=>{
+            fetch(url).then(file => {
                 URL.revokeObjectURL(url);
-                handle.createWritable().then(async (wt)=>{
+                handle.createWritable().then(async (wt) => {
                     await file.body.pipeTo(wt);
                 });
             });
@@ -133,7 +133,6 @@
                 let img = tf.browser.fromPixels(imag);
                 let img2 = tf.image.resizeBilinear(img, [512, 512]);
                 let img3 = tf.sub(tf.div(tf.expandDims(img2), 127.5), 1);
-                console.log("Running Model...");
                 let output = tfliteModel.predict(img3);
                 return tf.mul(tf.add(output, 1), 127.5);
             });
@@ -175,9 +174,9 @@
                         canvas.toBlob(async (blob) => {
                             let urle = URL.createObjectURL(blob);
                             let date = new Date();
-                            let name = `AnimeGANv3-prediction-${date.getTime()}.png`;
-                            let svHndl = await getSaveHandle(name);
-                            writeFile(svHndl, urle);
+                            let name = `AnimeGANv3_${model}-prediction-${date.getTime()}.png`;
+                            let savHndl = await getSaveHandle(name);
+                            writeFile(savHndl, urle);
                         });
                     });
                 };
