@@ -1,4 +1,6 @@
 <div class="copyDv">
-    <span>&#169 2023-present</span>
+    <span>Github Repo:</span>
+    <a href="https://github.com/DAId">DAId</a>
+    by
     <a href="https://github.com/XanDrchris" target="_blank" rel="noopener noreferrer">Xander Christopher</a>
 </div>
